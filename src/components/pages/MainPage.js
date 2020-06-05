@@ -40,9 +40,9 @@ class MainPage extends Component {
           </div>
           <div className="list-books-content">
             <div>
-            <Shelf name='Currently Reading' books={this.state.books.filter(book => book.Shelf === "currentlyReading")}/>
-                <Shelf name='Want To Read' books={this.state.books.filter(book => book.Shelf === "wantToRead")}/>
-                <Shelf name='Read' books={this.state.books.filter(book => book.Shelf === "read")}/>
+            <Shelf name='Currently Reading' books={this.state.books.filter(book => book.shelf === "currentlyReading")}/>
+                <Shelf name='Want To Read' books={this.state.books.filter(book => book.shelf === "wantToRead")}/>
+                <Shelf name='Read' books={this.state.books.filter(book => book.shelf === "read")}/>
              
               
             </div>
