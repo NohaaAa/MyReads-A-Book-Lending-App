@@ -26,6 +26,16 @@ class MainPage extends Component {
 
     }
 
+    updateBook = (book, shelf) => {
+      BooksAPI.update(book, shelf)
+      .then(response => {
+        book.shelf= shelf;
+        this.setState(state => ({
+          books: state.books.filter(book => book.shelf !== book.id).concat({book})
+        }))
+      });
+
+    }
     
     render() {
       // const { books } = this.state
@@ -40,9 +50,9 @@ class MainPage extends Component {
           </div>
           <div className="list-books-content">
             <div>
-            <Shelf name='Currently Reading' books={this.state.books.filter(book => book.shelf === "currentlyReading")}/>
-                <Shelf name='Want To Read' books={this.state.books.filter(book => book.shelf === "wantToRead")}/>
-                <Shelf name='Read' books={this.state.books.filter(book => book.shelf === "read")}/>
+            <Shelf updateBook={this.updateBook} name='Currently Reading' books={this.state.books.filter(book => book.shelf === "currentlyReading")}/>
+            <Shelf updateBook={this.updateBook} name='Want To Read' books={this.state.books.filter(book => book.shelf === "wantToRead")}/>
+            <Shelf updateBook={this.updateBook} name='Read' books={this.state.books.filter(book => book.shelf === "read")}/>
              
               
             </div>
