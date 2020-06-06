@@ -73,4 +73,4 @@ For searching books, only some specific words are allowed. [Here](SEARCH_TERMS.m
 
 ## **📓 Notes**
 
-This project was bootstrapped with `[Create React App](https://github.com/facebookincubator/create-react-app)` and integrated with some of the materials provided by the `[react nanodegree starter project](https://github.com/udacity/reactnd-project-myreads-starter)`.
+This project was bootstrapped with [`Create React App`](https://github.com/facebookincubator/create-react-app) and integrated with some of the materials provided by the [`react nanodegree starter project`](https://github.com/udacity/reactnd-project-myreads-starter).
