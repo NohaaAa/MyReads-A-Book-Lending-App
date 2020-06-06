@@ -7,6 +7,8 @@ import Book from '../Books';
 
 class SearchPage extends Component {
   
+  
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,11 +18,12 @@ class SearchPage extends Component {
     };
   }
 
+
   async componentDidMount() {
 
     try {
       const books = await BooksAPI.getAll();
-      // console.log(books);
+      
       this.setState( { books } );
     } catch(e) {}
 
@@ -39,7 +42,7 @@ class SearchPage extends Component {
 
   BooksAPI.search(this.state.query.trim())
     .then(response => {
-      // console.log(response);
+      
 
       if(response.error)  {
         return this.setState({ searchResults: [] });
@@ -48,7 +51,7 @@ class SearchPage extends Component {
         response.forEach( book => {
           let found = this.state.books.filter(b => b.id === book.id);
           if(found[0]) {
-            // console.log('same!');
+            
             book.shelf = found[0].shelf;
           }
         });
@@ -90,7 +93,7 @@ class SearchPage extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {
-              this.state.searchResults.map( (item, key) => <Book book={item} key={key} updateBook={this.updateBook}/> )
+              this.state.searchResults.map( (item, index) => <Book book={item} index={index} updateBook={this.updateBook}/> )
             }
           </ol>
         </div>

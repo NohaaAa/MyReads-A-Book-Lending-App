@@ -20,7 +20,7 @@ class MainPage extends Component {
 
     try {
       const books = await BooksAPI.getAll();
-      // console.log(books);
+     
       this.setState( { books } );
     } catch(e) {}
 
@@ -38,7 +38,7 @@ class MainPage extends Component {
   }
     
   render() {
-    // const { books } = this.state
+    
     if(!this.state.books.length) {
       return 'loading!';
     }

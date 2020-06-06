@@ -1,15 +1,9 @@
 /* eslint-disable no-mixed-operators */
 import React, {Component} from 'react';
-// import {Link} from 'react-router-dom';
+
 
 class Book extends Component {
-
-/*
-    componentDidMount() {
-        console.log(this);
-      }
-*/
-    
+ 
     render() {
         const {book, updateBook} = this.props;
         return ( 
@@ -29,7 +23,7 @@ class Book extends Component {
                         </div>
                     </div>
                     <div className="book-title">{book.title || 'No Title Found...'}</div>
-                    <div className="book-authors">{book.authors && book.authors[0] || "No Author Found.."}</div>
+                    <div className="book-authors">{book.authors && book.authors.join(', ') || "No Author Found.."}</div>
                 </div>
             </li>
 

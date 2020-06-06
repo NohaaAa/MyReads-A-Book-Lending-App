@@ -1,14 +1,8 @@
 import React, {Component} from 'react';
-// import {Link} from 'react-router-dom';
+
 import Book from './Books'
 
 class Shelf extends Component {
-
-/*
-  componentDidMount() {
-    console.log(this);
-  }
-*/
 
   render() {
 
@@ -23,7 +17,7 @@ class Shelf extends Component {
             {
 
               books.map( 
-                (book, key) => <Book updateBook={updateBook} book={book} key={key} />
+                (book, index => <Book updateBook={updateBook} book={book} index={index} />
               )
             }
           </ol>
