@@ -69,7 +69,7 @@ The search page also has a link to / (the root URL), which leads back to the mai
 When you navigate back to the main page from the search page, you should instantly see all of the selections you made on the search page in your library.
 
 ## How To Search A Book
-For searching books, only some specific words are allowed. [Here](SEARCH_TERMS.md)is where you can find an exhaustive list of these words.
+For searching books, only some specific words are allowed. [Here](SEARCH_TERMS.md) is where you can find an exhaustive list of these words.
 
 ## **📓 Notes**
 
