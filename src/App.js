@@ -3,6 +3,7 @@ import './App.css'
 import { Route } from 'react-router-dom';
 import MainPage from './components/pages/MainPage';
 import SearchPage from './components/pages/SearchPage';
+
 class BooksApp extends Component {
 
   render() {
@@ -16,4 +17,4 @@ class BooksApp extends Component {
   }
 }
 
-export default BooksApp
+export default BooksApp;
