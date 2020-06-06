@@ -4,6 +4,8 @@ import Book from './Books'
 
 class Shelf extends Component {
 
+
+
   render() {
 
     const {books, name, updateBook} = this.props;
@@ -15,17 +17,21 @@ class Shelf extends Component {
         <div className="bookshelf-books">
           <ol className="books-grid">
             {
-
               books.map( 
-                (book, index => <Book updateBook={updateBook} book={book} index={index} />
-              )
+                
+                ((book, index) => <Book updateBook={updateBook} book={book} index={index} />))
             }
+              
           </ol>
         </div>
       </div>
 
     )
+ 
+
   }
-}
+
+}    
+
 
 export default Shelf;
