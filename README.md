@@ -1,4 +1,4 @@
-# MyReads Project
+v# MyReads Project
 A Udacity React Developer Nanodegree 1st Project
 
 ## Project Overview
@@ -8,7 +8,7 @@ In the MyReads project, I had created a bookshelf app that allows you to select 
 [MyReads: A Book Landing App](#)
 
 ## Project File Structure
-
+``` bash
 ├── README.md - This file.
 ├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
 ├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
@@ -30,7 +30,7 @@ In the MyReads project, I had created a bookshelf app that allows you to select 
     │ 
     ├── index.css # Global styles. You probably won't need to change anything here.
     └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-
+```
 ## How To Run / Install
 
 - `npm install` or `yarn install` to install all project dependencies
@@ -54,7 +54,7 @@ Each book has a control that lets you select the shelf for that book. When you s
 
 ![](https://video.udacity-data.com/topher/2017/May/590c0f26_react-project1-b/react-project1-b.png)
 
-he main page also has a link to /search, a search page that allows you to find books to add to your library.
+The main page also has a link to /search, a search page that allows you to find books to add to your library.
 
 The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library. To keep the interface consistent, you may consider re-using some of the code you used to display the books on the main page.
 
