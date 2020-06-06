@@ -20,7 +20,7 @@ class SearchPage extends Component {
 
     try {
       const books = await BooksAPI.getAll();
-      console.log(books);
+      // console.log(books);
       this.setState( { books } );
     } catch(e) {}
 
@@ -35,11 +35,11 @@ class SearchPage extends Component {
   submitSearch = () => {
     if(this.state.query === '' || this.state.query === undefined) {
       return this.setState({ searchResults: [] });
-    }
+  }
 
-    BooksAPI.search(this.state.query.trim())
+  BooksAPI.search(this.state.query.trim())
     .then(response => {
-      console.log(response);
+      // console.log(response);
 
       if(response.error)  {
         return this.setState({ searchResults: [] });
@@ -48,7 +48,7 @@ class SearchPage extends Component {
         response.forEach( book => {
           let found = this.state.books.filter(b => b.id === book.id);
           if(found[0]) {
-            console.log('same!');
+            // console.log('same!');
             book.shelf = found[0].shelf;
           }
         });
@@ -56,6 +56,7 @@ class SearchPage extends Component {
       }
     });
   }
+
   updateBook = (book, shelf) => {
     BooksAPI.update(book, shelf)
     .then(response => {
@@ -67,7 +68,6 @@ class SearchPage extends Component {
 
   }
   
-
   render() {
 
     return (
@@ -85,7 +85,7 @@ class SearchPage extends Component {
               value={this.state.query}
               onChange={(event => {this.updateQuery(event.target.value)})}/>
           </div>
-          
+
         </div>
         <div className="search-books-results">
           <ol className="books-grid">

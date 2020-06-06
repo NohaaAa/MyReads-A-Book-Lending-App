@@ -9,14 +9,16 @@ class Book extends Component {
         console.log(this);
       }
 */
+    
     render() {
+        const {book, updateBook} = this.props;
         return ( 
             <li>
                 <div className="book">
                     <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 192, background: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ''}")`}}></div>
+                        <div className="book-cover" style={{ width: 128, height: 192, background: `url("${book.imageLinks && book.imageLinks.thumbnail || ''}")`}}></div>
                         <div className="book-shelf-changer">
-                            <select value={this.props.book.shelf || 'none'} onChange={ (e => {this.props.updateBook(this.props.book, e.target.value)}) }>
+                            <select value={book.shelf || 'none'} onChange={ (e => {updateBook(book, e.target.value)}) }>
 
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
@@ -26,8 +28,8 @@ class Book extends Component {
                             </select>
                         </div>
                     </div>
-                    <div className="book-title">{this.props.book.title || 'No Title Found...'}</div>
-                    <div className="book-authors">{this.props.book.authors && this.props.book.authors[0] || "No Author Found.."}</div>
+                    <div className="book-title">{book.title || 'No Title Found...'}</div>
+                    <div className="book-authors">{book.authors && book.authors[0] || "No Author Found.."}</div>
                 </div>
             </li>
 

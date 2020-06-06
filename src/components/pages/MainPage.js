@@ -20,7 +20,7 @@ class MainPage extends Component {
 
     try {
       const books = await BooksAPI.getAll();
-      console.log(books);
+      // console.log(books);
       this.setState( { books } );
     } catch(e) {}
 
@@ -65,7 +65,7 @@ class MainPage extends Component {
     )
 
   }
-  
+
 }
 
 export default MainPage;
