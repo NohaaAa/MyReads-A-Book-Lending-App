@@ -5,7 +5,7 @@ A Udacity React Developer Nanodegree 1st Project
 In the MyReads project, I had created a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project is done React to build the application and provides an API server and client library.
 
 ## Project Demo
-[MyReads: A Book Landing App](#)
+[MyReads: A Book Landing App](https://book-tracking-app.netlify.app/)
 
 ## Project File Structure
 ``` bash
