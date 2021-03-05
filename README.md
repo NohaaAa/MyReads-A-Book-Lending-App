@@ -1,4 +1,4 @@
-v# MyReads Project
+# MyReads Project
 A Udacity React Developer Nanodegree 1st Project
 
 ## Project Overview
