@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+v# MyReads Project
+A Udacity React Developer Nanodegree 1st Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+In the MyReads project, I had created a bookshelf app that allows you to select and categorize books you have read, are currently reading, or want to read. The project is done React to build the application and provides an API server and client library.
 
-## Available Scripts
+## Project Demo
+[MyReads: A Book Landing App](#)
 
-In the project directory, you can run:
+## Project File Structure
+``` bash
+├── README.md - This file.
+├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
+├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
+├── public
+│   ├── favicon.ico # React Icon, You may change if you wish.
+│   └── index.html # DO NOT MODIFY
+└── src
+    ├── App.css # Styles for your app. Feel free to customize this as you desire.
+    ├── App.js # This is the root of your app. Contains static HTML right now.
+    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
+    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── icons # Helpful images for your app. Use at your discretion.
+    ├── components # The app components
+    │    ├── Books.js
+    │    ├──  Shelf.js
+    │    └── pages # contain search and main page of the app
+    │        ├── MainPage.js
+    │        └──SearchPage.js 
+    │ 
+    ├── index.css # Global styles. You probably won't need to change anything here.
+    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+```
+## How To Run / Install
 
-### `npm start`
+- `npm install` or `yarn install` to install all project dependencies
+- `npm start` or `yarn start` to start development server
+- server will be running on `localhost:3000` on your local  machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Backend Server
+- This project is done using BookAPI backend server which is provied by Udacity to simplify the development process.
+- For more info about the [`BooksAPI.js`](src/BooksAPI.js) provided for development please refer to the [react nanodegree starter project](https://github.com/udacity/reactnd-project-myreads-starter).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## App Functionality
+In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
 
-### `npm test`
+* Currently Reading
+* Want to Read
+* Read
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Main Page View](https://video.udacity-data.com/topher/2017/May/590c0f12_react-project1-a/react-project1-a.png)
 
-### `npm run build`
+Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there. Note that the default value for the control should always be the current shelf the book is in.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](https://video.udacity-data.com/topher/2017/May/590c0f26_react-project1-b/react-project1-b.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The main page also has a link to /search, a search page that allows you to find books to add to your library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library. To keep the interface consistent, you may consider re-using some of the code you used to display the books on the main page.
 
-### `npm run eject`
+![Search Page View](https://video.udacity-data.com/topher/2017/December/5a3c22b9_screen-shot-2017-12-21-at-1.06.59-pm/screen-shot-2017-12-21-at-1.06.59-pm.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](https://video.udacity-data.com/topher/2017/July/595d48a9_correct-use-of-state/correct-use-of-state.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The search page also has a link to / (the root URL), which leads back to the main page.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+When you navigate back to the main page from the search page, you should instantly see all of the selections you made on the search page in your library.
 
-## Learn More
+## How To Search A Book
+For searching books, only some specific words are allowed. [Here](SEARCH_TERMS.md) is where you can find an exhaustive list of these words.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **📓 Notes**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project was bootstrapped with [`Create React App`](https://github.com/facebookincubator/create-react-app) and integrated with some of the materials provided by the [`react nanodegree starter project`](https://github.com/udacity/reactnd-project-myreads-starter).
