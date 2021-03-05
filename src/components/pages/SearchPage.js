@@ -15,6 +15,7 @@ class SearchPage extends Component {
       books: [],
       searchResults: [],
       query: '',
+      NotFounded: false
 
     };
   }
@@ -55,12 +56,13 @@ class SearchPage extends Component {
               book.shelf = found[0].shelf;
             }
           });
-          this.setState({ searchResults: res });
+          console.log(res)
+          this.setState({ searchResults: res, NotFounded: false });
 
 
         }
         catch (e) {
-          this.setState({ searchResults: [] });
+          this.setState({ searchResults: [], NotFounded: true });
 
         }
 
@@ -102,20 +104,14 @@ class SearchPage extends Component {
           <ol className="books-grid">
 
             {
-              (this.state.searchResults.length === 0 && this.state.found === false) ?
-                "NOT FOUND!"
+              (this.state.searchResults.length === 0) && (this.state.NotFounded) ?
+                "NOT FOUNDED!"
                 :
-
-                (this.state.searchResults.length === 0 && this.state.found) ?
-
-                  this.state.books.map((item, index) => <Book book={item} index={index} updateBook={this.updateBook} />)
+                (this.state.searchResults.length === 0) && (!this.state.NotFounded) ?
+                  ""
                   :
-                  (this.state.searchResults.length === 0) ?
+                  this.state.searchResults.map((item, index) => <Book book={item} index={index} updateBook={this.updateBook} key={item.id} />)
 
-                    this.state.books.map((item, index) => <Book book={item} index={index} updateBook={this.updateBook} />)
-
-                    :
-                    this.state.searchResults.map((item, index) => <Book book={item} index={index} updateBook={this.updateBook} />)
             }
           </ol>
         </div>
